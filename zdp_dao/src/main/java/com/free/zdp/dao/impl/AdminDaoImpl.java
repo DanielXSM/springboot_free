@@ -24,4 +24,19 @@ public class AdminDaoImpl implements AdminDao {
         String hello_world="开启创世乐园:----->>>>>>>>>>>>>>>>>>>>>"+s.getUsername();
         return hello_world;
     }
+
+    /**
+     * 根据名字查询爱好
+     *
+     * @param name
+     * @return
+     */
+    @Override
+    public String queryUserLikeByName(String name) {
+        User userByName = adminRepository.findUserByName(name);
+        if(null==userByName){
+            return "系统无此人信息，请联系管理员添加~~~~~";
+        }
+        return userByName.toString();
+    }
 }

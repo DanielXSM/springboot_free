@@ -13,7 +13,20 @@ public class User implements Serializable {
     private String username;
 
     private String pwd;
+    private String like;
+    private int age;
+    private String sex;
+    private String phone;
 
+    private String cname;
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
 
     public Long getId() {
         return id;
@@ -37,5 +50,48 @@ public class User implements Serializable {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    public String getLike() {
+        return like;
+    }
+
+    public void setLike(String like) {
+        this.like = like;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "hello: 大家好,我的名字叫  "+
+                cname  +
+                "  喜欢 "+
+                  like  +
+                " 年龄 " + age +
+                " 性别 " + sex +
+                " 手机号 " + phone + "   --->欢迎大家联系我<---- ";
     }
 }

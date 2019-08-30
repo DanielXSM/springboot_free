@@ -17,4 +17,19 @@ public class AdminServiceImpl implements AdminService {
         String s = adminDao.queryUserNameById(20L);
         return s;
     }
+
+    /**
+     * 查询爱好
+     *
+     * @return
+     */
+    @Override
+    public String like() {
+        return null;
+    }
+
+    @Override
+    public String welcome(String name) {
+        return adminDao.queryUserLikeByName(name);
+    }
 }
