@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("com.free.zdp.mapper.*")
+@MapperScan("com.free.zdp.mapper")
 public class MyBatisConfiguration {
 
 
@@ -17,7 +17,9 @@ public class MyBatisConfiguration {
      */
     @Bean
     public PaginationInterceptor paginationInterceptor(){
-        return new PaginationInterceptor();
+
+        PaginationInterceptor page= new PaginationInterceptor();
+        return page;
     }
 
 }

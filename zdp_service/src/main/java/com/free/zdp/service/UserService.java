@@ -15,4 +15,6 @@ import com.baomidou.mybatisplus.service.IService;
 public interface UserService extends IService<User> {
 
     String show(String name);
+
+    String shows(int id);
 }

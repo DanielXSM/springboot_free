@@ -45,8 +45,21 @@ public class AdminController extends BaseController {
      */
     @GetMapping("/user")
     public @ResponseBody
-    String name(String name) {
+    String show(String name) {
 
         return userService.show(name);
+    }
+
+
+    /**
+     * 通过user 访问
+     * @param id
+     * @return
+     */
+    @GetMapping("/users")
+    public @ResponseBody
+    String shows(int id) {
+
+        return userService.shows(id);
     }
 }

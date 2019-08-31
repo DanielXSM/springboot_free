@@ -5,10 +5,12 @@ import com.free.zdp.model.User;
 import com.free.zdp.service.UserService;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+
 
 /**
  * <p>
@@ -25,7 +27,15 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     private UserMapper userMapper;
     @Override
     public String show(String name) {
-        userMapper.selectByName(name);
-        return null;
+        User user = userMapper.selectByName(name);
+        return user.getLike();
+    }
+
+    @Override
+    public String shows(int id) {
+        User user = userMapper.selectById(id);
+        Integer age = user.getAge();
+        String a="年龄"+age;
+        return a;
     }
 }
