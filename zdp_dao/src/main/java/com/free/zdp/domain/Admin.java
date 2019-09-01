@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="user",schema = "public")
-public class User implements Serializable {
+public class Admin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
