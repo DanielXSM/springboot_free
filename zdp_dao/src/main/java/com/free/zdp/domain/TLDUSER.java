@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="user",schema = "public")
-public class Admin implements Serializable {
+@Table(name="t_ld_user",schema = "public")
+public class TLDUSER implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

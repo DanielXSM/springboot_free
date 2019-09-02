@@ -1,7 +1,7 @@
 package com.free.zdp.dao.impl;
 
 import com.free.zdp.dao.AdminDao;
-import com.free.zdp.domain.User;
+import com.free.zdp.domain.TLDUSER;
 import com.free.zdp.repository.AdminRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +15,12 @@ public class AdminDaoImpl implements AdminDao {
     private AdminRepository adminRepository;
     @Override
     public String queryUserNameById(Long id) {
-        Iterable<User> all = adminRepository.findAll();
+        Iterable<TLDUSER> all = adminRepository.findAll();
         System.out.println("aaaaa");
-        Optional<User> byId = adminRepository.findById(id);
-        User user = byId.get();
+        Optional<TLDUSER> byId = adminRepository.findById(id);
+        TLDUSER user = byId.get();
 
-        User s = adminRepository.findByIds(id);
+        TLDUSER s = adminRepository.findByIds(id);
         String hello_world="开启创世乐园:----->>>>>>>>>>>>>>>>>>>>>"+s.getUsername();
         return hello_world;
     }
@@ -33,7 +33,7 @@ public class AdminDaoImpl implements AdminDao {
      */
     @Override
     public String queryUserLikeByName(String name) {
-        User userByName = adminRepository.findUserByName(name);
+        TLDUSER userByName = adminRepository.findUserByName(name);
         if(null==userByName){
             return "系统无此人信息，请联系管理员添加~~~~~";
         }
