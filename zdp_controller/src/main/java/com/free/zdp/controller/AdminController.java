@@ -2,11 +2,14 @@ package com.free.zdp.controller;
 
 import com.free.zdp.common.BaseController;
 import com.free.zdp.service.AdminService;
-import com.free.zdp.service.UserService;
+import com.free.zdp.service.TLdUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin
@@ -16,7 +19,7 @@ public class AdminController extends BaseController {
     private AdminService adminService;
 
     @Autowired
-    private UserService userService;
+    private TLdUserService userService;
 
 
     @GetMapping("/")
@@ -47,19 +50,9 @@ public class AdminController extends BaseController {
     public @ResponseBody
     String show(String name) {
 
-        return userService.show(name);
+        return userService.queryMsgByName(name);
     }
 
 
-    /**
-     * 通过user 访问
-     * @param id
-     * @return
-     */
-    @GetMapping("/users")
-    public @ResponseBody
-    String shows(int id) {
 
-        return userService.shows(id);
-    }
 }

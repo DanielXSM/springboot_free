@@ -1,7 +1,5 @@
 package com.free.zdp.model;
 
-import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
 
 /**
@@ -10,10 +8,9 @@ import java.io.Serializable;
  * </p>
  *
  * @author zdp123
- * @since 2019-08-31
+ * @since 2019-09-02
  */
-@TableName("user")
-public class User implements Serializable {
+public class TLdUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -93,7 +90,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "TLdUser{" +
         ", id=" + id +
         ", username=" + username +
         ", pwd=" + pwd +
